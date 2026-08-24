@@ -1,0 +1,14 @@
+torch>=1.9.0
+torchvision>=0.10.0
+transformers>=4.18.0
+timm>=0.6.12
+numpy>=1.20.0
+scipy>=1.7.0
+tqdm>=4.62.0
+pillow>=8.3.0
+matplotlib>=3.4.0
+scikit-learn>=0.24.0
+
+kornia>=0.6.0  # 用于颜色空间转换和图像处理
+opencv-python>=4.5.0  # 可选，用于图像处理
+open_clip_torch>=2.20.0  # CLIP-ConvNeXt模型支持 

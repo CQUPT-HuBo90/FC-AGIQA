@@ -1,0 +1,128 @@
+# Python 编译文件
+__pycache__/
+*.py[cod]
+*$py.class
+.*
+
+# 虚拟环境
+venv/
+.env/
+.venv/
+env/
+ENV/
+
+# 依赖管理
+pip-wheel-metadata/
+*.egg-info/
+*.egg
+.pytest_cache/
+.coverage
+htmlcov/
+论文写作/
+
+# 日志和临时文件
+*.log
+*.tmp
+temp/
+logs/
+*.out
+*.err
+train.log
+checkpoint.txt
+
+# 数据文件
+*.csv
+*.npy
+*.h5
+data/
+raw_data/
+processed_data/
+datasets/
+results/
+AIGCIQA2023_Prompts.xlsx
+
+# 模型文件和预训练模型
+*.pth
+*.pt
+*.h5
+models/
+checkpoints/
+ckpts/
+pretrained/
+bert-large-uncased/
+bert-base-uncased/
+deberta-v3-large/
+deberta-v3-base/
+clip-vit-base-patch32/
+text_encoder.zip
+*.zip
+*.tar.gz
+*.rar
+*.bin
+*.model
+*.tar
+*.gz
+*.7z
+*.csv
+*.json
+# Jupyter Notebook 检查点
+.ipynb_checkpoints/
+*.ipynb_checkpoints/
+
+# 构建和输出目录
+dist/
+build/
+output/
+out/
+*.so
+*.dylib
+*.dll
+exp/
+
+# 操作系统生成的文件
+.DS_Store  # macOS
+Thumbs.db  # Windows
+desktop.ini
+*~
+
+# 编辑器相关
+.vscode/
+.idea/
+*.swp
+*.swo
+*#
+.project
+.pydevproject
+.settings/
+*.mdc
+.cursor/
+.trae/
+CLAUDE.md
+# 敏感信息
+secrets/
+issues/
+*.key
+*.pem
+.env
+config.ini
+credentials.json
+
+# 其他
+Fig/
+wandb/
+runs/
+lightning_logs/
+
+cleanned/
+
+# 发布的三组 CV 划分（仅跟踪公开的实验划分，不包含其他数据目录）
+!AIGCIQA/AIGCIQA/dataloader/cv_folds/
+!AIGCIQA/AIGCIQA/dataloader/cv_folds/1k_cqupt/
+!AIGCIQA/AIGCIQA/dataloader/cv_folds/1k_cqupt/fold_*/
+!AIGCIQA/AIGCIQA/dataloader/cv_folds/1k_cqupt/fold_*/*.csv
+!AIGCIQA/AIGCIQA/dataloader/cv_folds/3k_cqupt/
+!AIGCIQA/AIGCIQA/dataloader/cv_folds/3k_cqupt/fold_*/
+!AIGCIQA/AIGCIQA/dataloader/cv_folds/3k_cqupt/fold_*/*.csv
+!AIGCIQA/AIGCIQA/dataloader/cv_folds/2023_cqupt/
+!AIGCIQA/AIGCIQA/dataloader/cv_folds/2023_cqupt/fold_*/
+!AIGCIQA/AIGCIQA/dataloader/cv_folds/2023_cqupt/fold_*/*.csv

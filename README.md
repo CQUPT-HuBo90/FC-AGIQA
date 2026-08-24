@@ -1,14 +1,16 @@
 # FC-AGIQA
 
-论文项目代码：基于 CLIP-ConvNeXt 和频域增强的 AI 生成图像质量评价。
+Official implementation of our paper project for AI-generated image quality assessment with CLIP-ConvNeXt and frequency-aware enhancement.
 
-## 环境
+## Setup
+
+Install the Python dependencies:
 
 ```bash
 pip install -r AIGCIQA/AIGCIQA/requirements.txt
 ```
 
-预训练模型和数据集不会随仓库提供。默认数据路径为：
+Pretrained models and image datasets are not included. The dataloaders expect the following paths:
 
 ```text
 /home/dataset/AGIQA-1K/file
@@ -16,11 +18,11 @@ pip install -r AIGCIQA/AIGCIQA/requirements.txt
 /home/dataset/AIGCIQA2023/Image
 ```
 
-三组 5 折划分已放在 `AIGCIQA/AIGCIQA/dataloader/cv_folds/`。
+The five-fold CSV splits for these datasets are included under `AIGCIQA/AIGCIQA/dataloader/cv_folds/`.
 
-## 运行
+## Run
 
-### 单折 smoke run
+### Single-fold smoke run
 
 ```bash
 PYTHONPATH=./AIGCIQA python AIGCIQA/AIGCIQA/train.py \
@@ -29,36 +31,16 @@ PYTHONPATH=./AIGCIQA python AIGCIQA/AIGCIQA/train.py \
   --num_epochs 5
 ```
 
-可将 `--benchmark` 改为 `AGIQA1K`、`AGIQA3Kc` 或 `AIGCIQA2023q/a/c`。
+Use `AGIQA1K`, `AGIQA3Kc`, or `AIGCIQA2023q/a/c` for the other supported tasks.
 
-### 主实验
+### Main experiment
 
-编辑 `run_fmac.sh` 中的 `BENCHMARKS`、`CV_FOLDS`、`EPOCHS` 和 `GPU`，然后运行：
+Set `BENCHMARKS`, `CV_FOLDS`, `EPOCHS`, and `GPU` in `run_fmac.sh`, then run:
 
 ```bash
 bash run_fmac.sh
 ```
 
-脚本默认配置为 AIGCIQA-20K 官方划分；运行三组 CV 数据集时，请将 `BENCHMARKS` 改为相应名称。
+The script defaults to the official AIGCIQA-20K split. To use the included CV splits, set `BENCHMARKS` to the desired dataset before running.
 
-### 消融实验
-
-```bash
-GPU=0 EPOCHS=5 FOLD_LIST="1" bash run_ablation.sh
-```
-
-也可以使用 `run_clip_only.sh`、`run_ablation_gpu0.sh` 或 `run_ablation_gpu1.sh`。
-
-## 结果分析
-
-训练结果默认写入 `ckpts/` 和 CSV 文件。5 折结果可用以下命令汇总：
-
-```bash
-python fast_cv_analyzer.py --dataset AGIQA3K --save
-```
-
-跨数据集实验使用：
-
-```bash
-bash run_cross_dataset.sh
-```
+Training checkpoints and result files are written to the local `ckpts/` and `exp/` directories.
